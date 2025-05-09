@@ -1,10 +1,10 @@
 
-import { Scanner, Wrench, Car, Settings } from "lucide-react";
+import { BarChart2, Wrench, Car, Settings } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: <Scanner className="h-12 w-12" />,
+      icon: <BarChart2 className="h-12 w-12" />,
       title: "Diagnóstico por Scanner",
       description: "Lectura completa de códigos de error del vehículo mediante equipos de diagnóstico profesionales."
     },

@@ -1,5 +1,5 @@
 
-import { Scanner, Car } from "lucide-react";
+import { BarChart2, Car } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -22,7 +22,7 @@ const HeroSection = () => {
             
             <div className="flex flex-wrap gap-4 pt-4">
               <a href="#servicios" className="btn-primary">
-                <Scanner className="mr-2 h-5 w-5" />
+                <BarChart2 className="mr-2 h-5 w-5" />
                 Nuestros Servicios
               </a>
               

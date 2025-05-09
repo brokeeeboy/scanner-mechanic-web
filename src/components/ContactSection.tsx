@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Phone, MessageCircle, Whatsapp } from "lucide-react";
+import { Phone, MessageCircle, MessageSquare } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 
 const ContactSection = () => {
@@ -173,7 +172,7 @@ const ContactSection = () => {
                 
                 <div className="flex items-start">
                   <div className="bg-jocars-yellow rounded-full p-3 mr-4">
-                    <Whatsapp className="h-5 w-5 text-jocars-dark" />
+                    <MessageSquare className="h-5 w-5 text-jocars-dark" />
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white">WhatsApp</h4>
