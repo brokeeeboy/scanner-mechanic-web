@@ -1,0 +1,113 @@
+
+import { Facebook, Instagram, Twitter } from "lucide-react";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
+  return (
+    <footer className="bg-black/60 backdrop-blur-sm border-t border-jocars-yellow/20 pt-12 pb-8">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <a href="/" className="inline-block mb-6">
+              <img 
+                src="/lovable-uploads/faedce22-0a8c-48e3-b8f8-d065792939e8.png" 
+                alt="JOCARS" 
+                className="h-10"
+              />
+            </a>
+            
+            <p className="text-gray-400 mb-6">
+              Servicio de diagnóstico automotriz especializado. Tu auto habla y nosotros lo entendemos.
+            </p>
+            
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-jocars-yellow transition-colors">
+                <Facebook className="h-5 w-5" />
+                <span className="sr-only">Facebook</span>
+              </a>
+              
+              <a href="#" className="text-gray-400 hover:text-jocars-yellow transition-colors">
+                <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
+              </a>
+              
+              <a href="#" className="text-gray-400 hover:text-jocars-yellow transition-colors">
+                <Twitter className="h-5 w-5" />
+                <span className="sr-only">Twitter</span>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-white font-bold text-lg mb-4">Enlaces Rápidos</h3>
+            
+            <ul className="space-y-2">
+              <li>
+                <a href="#inicio" className="text-gray-400 hover:text-jocars-yellow transition-colors">Inicio</a>
+              </li>
+              
+              <li>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Servicios</a>
+              </li>
+              
+              <li>
+                <a href="#nosotros" className="text-gray-400 hover:text-jocars-yellow transition-colors">Nosotros</a>
+              </li>
+              
+              <li>
+                <a href="#contacto" className="text-gray-400 hover:text-jocars-yellow transition-colors">Contacto</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-white font-bold text-lg mb-4">Servicios</h3>
+            
+            <ul className="space-y-2">
+              <li>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Diagnóstico por Scanner</a>
+              </li>
+              
+              <li>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Reparación Electrónica</a>
+              </li>
+              
+              <li>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Mantenimiento Preventivo</a>
+              </li>
+              
+              <li>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Reprogramación ECU</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-white font-bold text-lg mb-4">Contacto</h3>
+            
+            <address className="not-italic text-gray-400 space-y-3">
+              <p>Calle Principal #123</p>
+              <p>Ciudad, Estado</p>
+              <p>Teléfono: <a href="tel:+123456789" className="hover:text-jocars-yellow transition-colors">+1 (234) 567-890</a></p>
+              <p>Email: <a href="mailto:contacto@jocars.com" className="hover:text-jocars-yellow transition-colors">contacto@jocars.com</a></p>
+            </address>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-500 text-sm mb-4 md:mb-0">
+            &copy; {currentYear} JOCARS. Todos los derechos reservados.
+          </p>
+          
+          <div className="flex space-x-6">
+            <a href="#" className="text-gray-500 hover:text-jocars-yellow transition-colors text-sm">Política de Privacidad</a>
+            <a href="#" className="text-gray-500 hover:text-jocars-yellow transition-colors text-sm">Términos de Servicio</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
