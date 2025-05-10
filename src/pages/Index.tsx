@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -16,7 +15,7 @@ const Index = () => {
       <AboutSection />
       <ContactSection />
       <Footer />
-      <WhatsAppButton phoneNumber="123456789" />
+      <WhatsAppButton phoneNumber="56959490325" />
     </div>
   );
 };

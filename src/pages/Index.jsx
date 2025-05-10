@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import AOS from "aos";
 import Navbar from "@/components/Navbar";
@@ -14,18 +13,18 @@ const Index = () => {
     // Initialize AOS with custom settings
     AOS.init({
       duration: 800,
-      easing: 'ease-out-cubic',
+      easing: "ease-out-cubic",
       once: false,
       mirror: true,
     });
-    
+
     // Refresh AOS on window resize
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       AOS.refresh();
     });
-    
+
     return () => {
-      window.removeEventListener('resize', () => {
+      window.removeEventListener("resize", () => {
         AOS.refresh();
       });
     };
@@ -39,7 +38,7 @@ const Index = () => {
       <AboutSection />
       <ContactSection />
       <Footer />
-      <WhatsAppButton phoneNumber="123456789" />
+      <WhatsAppButton phoneNumber="56959490325" />
     </div>
   );
 };
