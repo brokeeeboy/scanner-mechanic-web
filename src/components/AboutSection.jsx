@@ -24,7 +24,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Experiencia y Profesionalismo</h3>
-                  <p className="text-gray-400">Contamos con más de 10 años de experiencia en el diagnóstico automotriz.</p>
+                  <p className="text-gray-400">Contamos con más de 5 años de experiencia en el diagnóstico automotriz.</p>
                 </div>
               </div>
               
@@ -49,7 +49,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Servicio Garantizado</h3>
-                  <p className="text-gray-400">Todos nuestros servicios cuentan con garantía y seguimiento post-reparación.</p>
+                  <p className="text-gray-400">Nuestros servicios cuentan con garantía y seguimiento post-reparación.</p>
                 </div>
               </div>
             </div>

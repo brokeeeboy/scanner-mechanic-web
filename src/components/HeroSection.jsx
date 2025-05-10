@@ -34,7 +34,7 @@ const HeroSection = () => {
             
             <div className="flex items-center space-x-8 pt-8" data-aos="fade-up" data-aos-delay="300">
               <div>
-                <p className="text-4xl font-bold text-jocars-yellow">10+</p>
+                <p className="text-4xl font-bold text-jocars-yellow">5+</p>
                 <p className="text-sm text-gray-400">Años de experiencia</p>
               </div>
               

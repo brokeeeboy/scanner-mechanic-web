@@ -70,7 +70,7 @@ const Footer = () => {
               </li>
               
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Reparación Electrónica</a>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Inspección Pre-Compra</a>
               </li>
               
               <li>
@@ -78,7 +78,7 @@ const Footer = () => {
               </li>
               
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Reprogramación ECU</a>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Regeneración DPF</a>
               </li>
             </ul>
           </div>
@@ -87,10 +87,10 @@ const Footer = () => {
             <h3 className="text-white font-bold text-lg mb-4">Contacto</h3>
             
             <address className="not-italic text-gray-400 space-y-3">
-              <p>Calle Principal #123</p>
-              <p>Ciudad, Estado</p>
-              <p>Teléfono: <a href="tel:+123456789" className="hover:text-jocars-yellow transition-colors">+1 (234) 567-890</a></p>
-              <p>Email: <a href="mailto:contacto@jocars.com" className="hover:text-jocars-yellow transition-colors">contacto@jocars.com</a></p>
+              <p>Región Metropolitana</p>
+              
+              <p>Teléfono: <a href="tel:+123456789" className="hover:text-jocars-yellow transition-colors">+56 9 3700 2417</a></p>
+              <p>Email: <a href="mailto:contacto@jocars.com" className="hover:text-jocars-yellow transition-colors">jocarscl@gmail.com</a></p>
             </address>
           </div>
         </div>

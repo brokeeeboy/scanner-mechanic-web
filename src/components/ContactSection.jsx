@@ -27,7 +27,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white">Teléfono</h4>
-                    <a href="tel:+123456789" className="text-gray-300 hover:text-jocars-yellow transition-colors">+1 (234) 567-890</a>
+                    <a href="tel:+123456789" className="text-gray-300 hover:text-jocars-yellow transition-colors">+56 9 3700 2417</a>
                   </div>
                 </div>
                 
@@ -37,7 +37,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white">Correo Electrónico</h4>
-                    <a href="mailto:contacto@jocars.com" className="text-gray-300 hover:text-jocars-yellow transition-colors">contacto@jocars.com</a>
+                    <a href="mailto:contacto@jocars.com" className="text-gray-300 hover:text-jocars-yellow transition-colors">jocarscl@gmail.com</a>
                   </div>
                 </div>
                 
@@ -47,7 +47,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white">WhatsApp</h4>
-                    <a href="https://wa.me/123456789" className="text-gray-300 hover:text-jocars-yellow transition-colors">+1 (234) 567-890</a>
+                    <a href="https://wa.me/123456789" className="text-gray-300 hover:text-jocars-yellow transition-colors">+56 9 3700 2417</a>
                     <p className="text-gray-400 text-sm mt-1">Disponible de 8:00 AM - 8:00 PM</p>
                   </div>
                 </div>
@@ -70,13 +70,13 @@ const ContactSection = () => {
                 
                 <div className="flex justify-between">
                   <p className="text-gray-300">Domingos</p>
-                  <p className="text-gray-500 font-medium">Cerrado</p>
+                  <p className="text-gray-500 font-medium">No atendemos</p>
                 </div>
               </div>
               
               <div className="mt-6">
                 <p className="text-gray-400 text-sm">
-                  También ofrecemos servicios a domicilio y atención de emergencias previa coordinación.
+                  Ofrecemos servicios a domicilio y atención de emergencias previa coordinación.
                 </p>
               </div>
             </div>
