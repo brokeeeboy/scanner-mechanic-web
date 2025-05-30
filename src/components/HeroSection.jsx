@@ -54,7 +54,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-jocars-yellow/20 blur-2xl rounded-full animate-pulse-slow"></div>
               <img 
-                src="/lovable-uploads/faedce22-0a8c-48e3-b8f8-d065792939e8.png" 
+                src="/lovable-uploads/ChatGPT Image 10 may 2025, 18_32_50.png" 
                 alt="JOCARS Logo" 
                 className="relative z-10 h-96 w-auto"
               />

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
 
@@ -10,28 +9,35 @@ const ContactForm = () => {
     car: "",
     message: ""
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setIsSubmitting(false);
-      
+
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch("/api/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json(); // <-- aquí falla si backend no devuelve JSON
+
+    if (response.ok) {
       toast({
         title: "Mensaje enviado",
         description: "Gracias por contactarnos. Te responderemos a la brevedad.",
       });
-      
+
       setFormData({
         name: "",
         email: "",
@@ -39,13 +45,25 @@ const ContactForm = () => {
         car: "",
         message: ""
       });
-    }, 1500);
-  };
+    } else {
+      throw new Error(result.error || "Error al enviar el mensaje");
+    }
+
+  } catch (error) {
+    console.error(error);
+    toast({
+      title: "Error de red",
+      description: error.message,
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="bg-black/40 backdrop-blur-sm border border-jocars-yellow/20 rounded-xl p-8" data-aos="fade-right">
       <h3 className="text-2xl font-bold mb-6 text-white">Envíanos un mensaje</h3>
-      
+
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
@@ -60,7 +78,7 @@ const ContactForm = () => {
               className="w-full bg-jocars-dark border border-jocars-yellow/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-yellow"
             />
           </div>
-          
+
           <div>
             <label htmlFor="email" className="block text-gray-300 mb-2">Correo Electrónico</label>
             <input
@@ -74,7 +92,7 @@ const ContactForm = () => {
             />
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
             <label htmlFor="phone" className="block text-gray-300 mb-2">Teléfono</label>
@@ -88,7 +106,7 @@ const ContactForm = () => {
               className="w-full bg-jocars-dark border border-jocars-yellow/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-yellow"
             />
           </div>
-          
+
           <div>
             <label htmlFor="car" className="block text-gray-300 mb-2">Vehículo (Marca, Modelo, Año)</label>
             <input
@@ -101,7 +119,7 @@ const ContactForm = () => {
             />
           </div>
         </div>
-        
+
         <div className="mb-6">
           <label htmlFor="message" className="block text-gray-300 mb-2">Mensaje</label>
           <textarea
@@ -114,7 +132,7 @@ const ContactForm = () => {
             className="w-full bg-jocars-dark border border-jocars-yellow/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-yellow"
           ></textarea>
         </div>
-        
+
         <button
           type="submit"
           disabled={isSubmitting}
