@@ -30,6 +30,8 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
+      console.log('Enviando formulario:', formData);
+      
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -38,7 +40,12 @@ const ContactForm = () => {
         body: JSON.stringify(formData)
       });
 
+      console.log('Respuesta del servidor:', response.status, response.statusText);
+
       if (response.ok) {
+        const result = await response.json();
+        console.log('Resultado exitoso:', result);
+        
         toast({
           title: "Mensaje enviado",
           description: "Gracias por contactarnos. Te responderemos a la brevedad.",
@@ -52,15 +59,24 @@ const ContactForm = () => {
           message: ""
         });
       } else {
-        const errorData = await response.text();
-        throw new Error(errorData || "Error al enviar el mensaje");
+        const errorData = await response.json();
+        console.error('Error del servidor:', errorData);
+        
+        throw new Error(errorData.error || `Error ${response.status}: ${response.statusText}`);
       }
 
-    } catch (error) {
-      console.error("Error:", error);
+    } catch (error: any) {
+      console.error("Error completo:", error);
+      
+      let errorMessage = "Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente.";
+      
+      if (error.message) {
+        errorMessage = error.message;
+      }
+      
       toast({
         title: "Error al enviar mensaje",
-        description: "Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente.",
+        description: errorMessage,
         variant: "destructive"
       });
     } finally {
@@ -75,7 +91,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
-            <label htmlFor="name" className="block text-gray-300 mb-2">Nombre</label>
+            <label htmlFor="name" className="block text-gray-300 mb-2">Nombre *</label>
             <input
               type="text"
               id="name"
@@ -88,7 +104,7 @@ const ContactForm = () => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-gray-300 mb-2">Correo Electrónico</label>
+            <label htmlFor="email" className="block text-gray-300 mb-2">Correo Electrónico *</label>
             <input
               type="email"
               id="email"
@@ -110,7 +126,6 @@ const ContactForm = () => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              required
               className="w-full bg-jocars-dark border border-jocars-yellow/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-yellow"
             />
           </div>
@@ -129,7 +144,7 @@ const ContactForm = () => {
         </div>
 
         <div className="mb-6">
-          <label htmlFor="message" className="block text-gray-300 mb-2">Mensaje</label>
+          <label htmlFor="message" className="block text-gray-300 mb-2">Mensaje *</label>
           <textarea
             id="message"
             name="message"
