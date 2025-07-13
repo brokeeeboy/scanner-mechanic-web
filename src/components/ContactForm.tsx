@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  car: string;
+  message: string;
+}
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
@@ -12,56 +20,56 @@ const ContactForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    const response = await fetch("/api/sendEmail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData)
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
 
-    const result = await response.json(); // <-- aquí falla si backend no devuelve JSON
+      if (response.ok) {
+        toast({
+          title: "Mensaje enviado",
+          description: "Gracias por contactarnos. Te responderemos a la brevedad.",
+        });
 
-    if (response.ok) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          car: "",
+          message: ""
+        });
+      } else {
+        const errorData = await response.text();
+        throw new Error(errorData || "Error al enviar el mensaje");
+      }
+
+    } catch (error) {
+      console.error("Error:", error);
       toast({
-        title: "Mensaje enviado",
-        description: "Gracias por contactarnos. Te responderemos a la brevedad.",
+        title: "Error al enviar mensaje",
+        description: "Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente.",
+        variant: "destructive"
       });
-
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        car: "",
-        message: ""
-      });
-    } else {
-      throw new Error(result.error || "Error al enviar el mensaje");
+    } finally {
+      setIsSubmitting(false);
     }
-
-  } catch (error) {
-    console.error(error);
-    toast({
-      title: "Error de red",
-      description: error.message,
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
-    <div className="bg-black/40 backdrop-blur-sm border border-jocars-yellow/20 rounded-xl p-8" data-aos="fade-right">
+    <div className="bg-black/40 backdrop-blur-sm border border-jocars-yellow/20 rounded-xl p-8">
       <h3 className="text-2xl font-bold mb-6 text-white">Envíanos un mensaje</h3>
 
       <form onSubmit={handleSubmit}>

@@ -36,8 +36,8 @@ const ServicesSection = () => {
     },
     {
       icon: <Wrench className="h-12 w-12" />,
-      title: "Reparación Electrónica",
-      description: "Solución de problemas relacionados con la electrónica y sistemas computarizados de tu automóvil."
+      title: "Inspección Pre-Compra",
+      description: "Revisión exhaustiva del estado mecánico y electrónico del vehículo antes de la compra."
     },
     {
       icon: <Car className="h-12 w-12" />,
@@ -46,8 +46,8 @@ const ServicesSection = () => {
     },
     {
       icon: <Settings className="h-12 w-12" />,
-      title: "Reprogramación ECU",
-      description: "Actualización y reprogramación de la unidad de control electrónico para un rendimiento óptimo."
+      title: "Regeneración DPF",
+      description: "Limpieza y reprogramación del filtro de partículas diésel para un rendimiento óptimo."
     }
   ];
 
