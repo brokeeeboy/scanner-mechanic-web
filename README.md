@@ -1,66 +1,36 @@
 # JOCARS - Servicios de Scanner Automotriz
 
-## 📧 Configuración del Formulario de Contacto
+## 📧 Formulario de Contacto
 
-Este proyecto usa **EmailJS** para enviar emails desde el formulario de contacto directamente a tu correo.
+El formulario de contacto está configurado para abrir directamente el cliente de email del usuario con toda la información pre-llenada.
 
-### 🔧 Configuración paso a paso:
+### 🔧 Cómo funciona:
 
-#### 1. Crear cuenta en EmailJS
-1. Ve a [EmailJS.com](https://www.emailjs.com/)
-2. Crea una cuenta gratuita
-3. Verifica tu email
+1. **El cliente llena el formulario** con su información
+2. **Hace clic en "Abrir mi Email"**
+3. **Se abre automáticamente su cliente de email** (Gmail, Outlook, Apple Mail, etc.)
+4. **El email ya viene pre-llenado** con:
+   - ✅ Tu dirección: `jocarscl@gmail.com`
+   - ✅ Asunto: `Consulta JOCARS - [Nombre del cliente]`
+   - ✅ Mensaje formateado con toda la información del formulario
+5. **El cliente solo tiene que hacer clic en "Enviar"**
 
-#### 2. Configurar el servicio de email
-1. En el dashboard de EmailJS, ve a **"Email Services"**
-2. Haz clic en **"Add New Service"**
-3. Selecciona **Gmail** (o tu proveedor de email preferido)
-4. Conecta tu cuenta de Gmail (`jocarscl@gmail.com`)
-5. Copia el **Service ID** (algo como `service_xxxxxxx`)
+### ✨ Ventajas:
 
-#### 3. Crear template de email
-1. Ve a **"Email Templates"**
-2. Haz clic en **"Create New Template"**
-3. Usa este template:
+- ✅ **Sin configuración** - Funciona inmediatamente
+- ✅ **Sin APIs** - No depende de servicios externos
+- ✅ **100% confiable** - Usa el cliente de email del usuario
+- ✅ **Familiar para el usuario** - Usa su email habitual
+- ✅ **Sin límites** - Funciona siempre
+- ✅ **Información completa** - Incluye todos los datos del formulario
 
-```
-Asunto: Nuevo mensaje de contacto JOCARS - {{from_name}}
+### 📱 Compatible con:
 
-Contenido:
-Has recibido un nuevo mensaje desde el sitio web de JOCARS:
-
-Nombre: {{from_name}}
-Email: {{from_email}}
-Teléfono: {{phone}}
-Vehículo: {{car}}
-
-Mensaje:
-{{message}}
-
----
-Este mensaje fue enviado desde jocars.cl
-```
-
-4. Copia el **Template ID** (algo como `template_xxxxxxx`)
-
-#### 4. Obtener Public Key
-1. Ve a **"Account"** → **"General"**
-2. Copia tu **Public Key** (algo como `user_xxxxxxxxxxxxxxxx`)
-
-#### 5. Configurar en el código
-Abre `src/components/ContactForm.tsx` y reemplaza estas líneas:
-
-```typescript
-const serviceId = 'tu_service_id_aqui';
-const templateId = 'tu_template_id_aqui'; 
-const publicKey = 'tu_public_key_aqui';
-```
-
-Con tus IDs reales de EmailJS.
-
-### ✅ ¡Listo!
-
-Ahora el formulario enviará los mensajes directamente a tu email `jocarscl@gmail.com` sin necesidad de backend o APIs externas.
+- Gmail (web y app)
+- Outlook (web y app)
+- Apple Mail
+- Thunderbird
+- Cualquier cliente de email instalado
 
 ## 🚀 Desarrollo
 
@@ -71,7 +41,7 @@ npm run dev
 
 ## 📱 Características
 
-- ✅ Formulario de contacto funcional con EmailJS
+- ✅ Formulario de contacto con mailto
 - ✅ Diseño responsive
 - ✅ Botón de WhatsApp flotante
 - ✅ Animaciones suaves

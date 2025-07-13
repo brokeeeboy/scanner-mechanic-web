@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
-import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string;
@@ -19,42 +18,60 @@ const ContactForm = () => {
     message: ""
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    try {
-      // Configuración de EmailJS
-      const serviceId = 'service_jocars'; // Reemplaza con tu Service ID
-      const templateId = 'template_jocars'; // Reemplaza con tu Template ID
-      const publicKey = 'tu_public_key_aqui'; // Reemplaza con tu Public Key
-
-      // Parámetros del template
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone || 'No proporcionado',
-        car: formData.car || 'No especificado',
-        message: formData.message,
-        to_email: 'jocarscl@gmail.com', // Tu email donde quieres recibir los mensajes
-      };
-
-      // Enviar email usando EmailJS
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
+    // Validar campos requeridos
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       toast({
-        title: "¡Mensaje enviado exitosamente!",
-        description: "Gracias por contactarnos. Te responderemos a la brevedad.",
+        title: "Campos requeridos",
+        description: "Por favor completa todos los campos obligatorios marcados con *",
+        variant: "destructive"
       });
+      return;
+    }
 
-      // Limpiar formulario
+    // Crear el contenido del email
+    const emailSubject = `Consulta JOCARS - ${formData.name}`;
+    
+    const emailBody = `Hola JOCARS,
+
+Mi nombre es ${formData.name} y me gustaría contactarlos para una consulta.
+
+INFORMACIÓN DE CONTACTO:
+- Nombre: ${formData.name}
+- Email: ${formData.email}
+- Teléfono: ${formData.phone || 'No proporcionado'}
+- Vehículo: ${formData.car || 'No especificado'}
+
+MENSAJE:
+${formData.message}
+
+---
+Este mensaje fue generado desde el formulario de contacto de jocars.cl
+
+Saludos cordiales,
+${formData.name}`;
+
+    // Crear el enlace mailto
+    const mailtoLink = `mailto:jocarscl@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+    // Abrir el cliente de email
+    window.location.href = mailtoLink;
+
+    // Mostrar mensaje de éxito
+    toast({
+      title: "¡Cliente de email abierto!",
+      description: "Se ha abierto tu cliente de email con el mensaje pre-llenado. Solo tienes que enviarlo.",
+    });
+
+    // Limpiar formulario después de un momento
+    setTimeout(() => {
       setFormData({
         name: "",
         email: "",
@@ -62,18 +79,7 @@ const ContactForm = () => {
         car: "",
         message: ""
       });
-
-    } catch (error: any) {
-      console.error("Error al enviar mensaje:", error);
-      
-      toast({
-        title: "Error al enviar mensaje",
-        description: "Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente o contáctanos por WhatsApp.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   return (
@@ -161,24 +167,17 @@ const ContactForm = () => {
 
         <button
           type="submit"
-          disabled={isSubmitting}
-          className="btn-primary w-full flex justify-center items-center disabled:opacity-50 disabled:cursor-not-allowed"
+          className="btn-primary w-full flex justify-center items-center"
         >
-          {isSubmitting ? (
-            <>
-              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-jocars-dark" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              Enviando mensaje...
-            </>
-          ) : (
-            "Enviar Mensaje"
-          )}
+          📧 Abrir mi Email
         </button>
 
         <p className="text-gray-400 text-sm mt-4 text-center">
           Los campos marcados con <span className="text-jocars-yellow">*</span> son obligatorios
+        </p>
+        
+        <p className="text-gray-500 text-xs mt-2 text-center">
+          Al hacer clic se abrirá tu cliente de email con el mensaje pre-llenado
         </p>
       </form>
     </div>
