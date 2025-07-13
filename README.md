@@ -1,73 +1,79 @@
-# Welcome to your Lovable project
+# JOCARS - Servicios de Scanner Automotriz
 
-## Project info
+## 📧 Configuración del Formulario de Contacto
 
-**URL**: https://lovable.dev/projects/54f5a293-ed91-438e-930b-8e7202b615af
+Este proyecto usa **EmailJS** para enviar emails desde el formulario de contacto directamente a tu correo.
 
-## How can I edit this code?
+### 🔧 Configuración paso a paso:
 
-There are several ways of editing your application.
+#### 1. Crear cuenta en EmailJS
+1. Ve a [EmailJS.com](https://www.emailjs.com/)
+2. Crea una cuenta gratuita
+3. Verifica tu email
 
-**Use Lovable**
+#### 2. Configurar el servicio de email
+1. En el dashboard de EmailJS, ve a **"Email Services"**
+2. Haz clic en **"Add New Service"**
+3. Selecciona **Gmail** (o tu proveedor de email preferido)
+4. Conecta tu cuenta de Gmail (`jocarscl@gmail.com`)
+5. Copia el **Service ID** (algo como `service_xxxxxxx`)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/54f5a293-ed91-438e-930b-8e7202b615af) and start prompting.
+#### 3. Crear template de email
+1. Ve a **"Email Templates"**
+2. Haz clic en **"Create New Template"**
+3. Usa este template:
 
-Changes made via Lovable will be committed automatically to this repo.
+```
+Asunto: Nuevo mensaje de contacto JOCARS - {{from_name}}
 
-**Use your preferred IDE**
+Contenido:
+Has recibido un nuevo mensaje desde el sitio web de JOCARS:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Nombre: {{from_name}}
+Email: {{from_email}}
+Teléfono: {{phone}}
+Vehículo: {{car}}
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Mensaje:
+{{message}}
 
-Follow these steps:
+---
+Este mensaje fue enviado desde jocars.cl
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+4. Copia el **Template ID** (algo como `template_xxxxxxx`)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+#### 4. Obtener Public Key
+1. Ve a **"Account"** → **"General"**
+2. Copia tu **Public Key** (algo como `user_xxxxxxxxxxxxxxxx`)
 
-# Step 3: Install the necessary dependencies.
-npm i
+#### 5. Configurar en el código
+Abre `src/components/ContactForm.tsx` y reemplaza estas líneas:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```typescript
+const serviceId = 'tu_service_id_aqui';
+const templateId = 'tu_template_id_aqui'; 
+const publicKey = 'tu_public_key_aqui';
+```
+
+Con tus IDs reales de EmailJS.
+
+### ✅ ¡Listo!
+
+Ahora el formulario enviará los mensajes directamente a tu email `jocarscl@gmail.com` sin necesidad de backend o APIs externas.
+
+## 🚀 Desarrollo
+
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 📱 Características
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/54f5a293-ed91-438e-930b-8e7202b615af) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- ✅ Formulario de contacto funcional con EmailJS
+- ✅ Diseño responsive
+- ✅ Botón de WhatsApp flotante
+- ✅ Animaciones suaves
+- ✅ 100% TypeScript
+- ✅ Componentes reutilizables
