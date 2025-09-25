@@ -146,12 +146,12 @@
 }
 
 .service-card {
-  @apply relative overflow-hidden bg-black/40 rounded-xl p-6 border border-jocars-yellow/20 backdrop-blur-sm hover:shadow-xl hover:shadow-jocars-yellow/30 transition-all duration-500 flex flex-col h-full;
+  @apply relative overflow-hidden bg-black/40 rounded-xl p-6 border border-jocars-red/20 backdrop-blur-sm hover:shadow-xl hover:shadow-jocars-red/30 transition-all duration-500 flex flex-col h-full;
 }
 
 .service-card::before {
   content: '';
-  @apply absolute inset-0 bg-gradient-to-br from-jocars-yellow/5 to-transparent opacity-50;
+  @apply absolute inset-0 bg-gradient-to-br from-jocars-red/5 to-transparent opacity-50;
 }
 
 .service-card:hover::before {
@@ -159,7 +159,7 @@
 }
 
 .service-icon {
-  @apply text-jocars-yellow mb-4 relative z-10 transition-all;
+  @apply text-jocars-red mb-4 relative z-10 transition-all;
 }
 
 .service-card:hover .service-icon {
@@ -167,11 +167,11 @@
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-jocars-yellow to-yellow-400 animate-gradient;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-jocars-red to-red-400 animate-gradient;
 }
 
 .btn-primary {
-  @apply bg-jocars-yellow text-jocars-dark font-bold py-3 px-6 rounded-lg hover:bg-yellow-500 transition-all duration-300 inline-flex items-center justify-center relative overflow-hidden shadow-md hover:shadow-jocars-yellow/30;
+  @apply bg-jocars-red text-white font-bold py-3 px-6 rounded-lg hover:bg-red-600 transition-all duration-300 inline-flex items-center justify-center relative overflow-hidden shadow-md hover:shadow-jocars-red/30;
 }
 
 .btn-primary::after {
@@ -180,12 +180,12 @@
 }
 
 .btn-outline {
-  @apply bg-transparent text-jocars-yellow font-bold py-3 px-6 rounded-lg border border-jocars-yellow hover:bg-jocars-yellow/10 transition-all duration-300 inline-flex items-center justify-center shadow-md hover:shadow-jocars-yellow/20;
+  @apply bg-transparent text-jocars-red font-bold py-3 px-6 rounded-lg border border-jocars-red hover:bg-jocars-red/10 transition-all duration-300 inline-flex items-center justify-center shadow-md hover:shadow-jocars-red/20;
 }
 
 .parallax-bg {
   @apply fixed inset-0 z-0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFCC00' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF0000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Estilos para el componente ServicesSection */

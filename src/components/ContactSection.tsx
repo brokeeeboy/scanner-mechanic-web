@@ -22,33 +22,33 @@ const ContactSection = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-jocars-yellow rounded-full p-3 mr-4">
-                    <Phone className="h-5 w-5 text-jocars-dark" />
+                  <div className="bg-jocars-red rounded-full p-3 mr-4">
+                    <Phone className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white">Teléfono</h4>
-                    <a href="tel:+56937002417" className="text-gray-300 hover:text-jocars-yellow transition-colors">+56 9 3700 2417</a>
+                    <a href="tel:+56937002417" className="text-gray-300 hover:text-jocars-red transition-colors">+56 9 3700 2417</a>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-jocars-yellow rounded-full p-3 mr-4">
-                    <MessageCircle className="h-5 w-5 text-jocars-dark" />
+                  <div className="bg-jocars-red rounded-full p-3 mr-4">
+                    <MessageCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white">Correo Electrónico</h4>
-                    <a href="mailto:jocarscl@gmail.com" className="text-gray-300 hover:text-jocars-yellow transition-colors">jocarscl@gmail.com</a>
+                    <a href="mailto:jocarscl@gmail.com" className="text-gray-300 hover:text-jocars-red transition-colors">jocarscl@gmail.com</a>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-jocars-yellow rounded-full p-3 mr-4">
-                    <MessageSquare className="h-5 w-5 text-jocars-dark" />
+                  <div className="bg-jocars-red rounded-full p-3 mr-4">
+                    <MessageSquare className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white">WhatsApp</h4>
-                    <a href="https://wa.me/56937002417" className="text-gray-300 hover:text-jocars-yellow transition-colors">+56 9 3700 2417</a>
-                    <p className="text-gray-400 text-sm mt-1">Disponible de 8:00 AM - 8:00 PM</p>
+                    <a href="https://wa.me/56937002417" className="text-gray-300 hover:text-jocars-red transition-colors">+56 9 3700 2417</a>
+                    <p className="text-gray-400 text-sm mt-1">Disponible de 9:00 AM - 7:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -60,12 +60,12 @@ const ContactSection = () => {
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <p className="text-gray-300">Lunes - Viernes</p>
-                  <p className="text-jocars-yellow font-medium">8:00 AM - 8:00 PM</p>
+                  <p className="text-jocars-red font-medium">9:00 AM - 7:00 PM</p>
                 </div>
                 
                 <div className="flex justify-between">
                   <p className="text-gray-300">Sábados</p>
-                  <p className="text-jocars-yellow font-medium">9:00 AM - 5:00 PM</p>
+                  <p className="text-jocars-red font-medium">9:00 AM - 5:00 PM</p>
                 </div>
                 
                 <div className="flex justify-between">

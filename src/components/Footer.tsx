@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <a href="/" className="inline-block mb-6">
               <img 
-                src="/lovable-uploads/faedce22-0a8c-48e3-b8f8-d065792939e8.png" 
+                src="/jocars-logo-new.jpg" 
                 alt="JOCARS" 
                 className="h-10"
               />
@@ -27,12 +27,12 @@ const Footer = () => {
                 <span className="sr-only">Facebook</span>
               </a>
               
-              <a href="#" className="text-gray-400 hover:text-jocars-yellow transition-colors">
+              <a href="https://www.instagram.com/jocars.cl/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-jocars-red transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </a>
               
-              <a href="#" className="text-gray-400 hover:text-jocars-yellow transition-colors">
+              <a href="#" className="text-gray-400 hover:text-jocars-red transition-colors">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </a>
@@ -44,19 +44,19 @@ const Footer = () => {
             
             <ul className="space-y-2">
               <li>
-                <a href="#inicio" className="text-gray-400 hover:text-jocars-yellow transition-colors">Inicio</a>
+                <a href="#inicio" className="text-gray-400 hover:text-jocars-red transition-colors">Inicio</a>
               </li>
               
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Servicios</a>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-red transition-colors">Servicios</a>
               </li>
               
               <li>
-                <a href="#nosotros" className="text-gray-400 hover:text-jocars-yellow transition-colors">Nosotros</a>
+                <a href="#nosotros" className="text-gray-400 hover:text-jocars-red transition-colors">Nosotros</a>
               </li>
               
               <li>
-                <a href="#contacto" className="text-gray-400 hover:text-jocars-yellow transition-colors">Contacto</a>
+                <a href="#contacto" className="text-gray-400 hover:text-jocars-red transition-colors">Contacto</a>
               </li>
             </ul>
           </div>
@@ -66,19 +66,19 @@ const Footer = () => {
             
             <ul className="space-y-2">
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Diagnóstico por Scanner</a>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-red transition-colors">Diagnóstico por Scanner</a>
               </li>
               
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Inspección Pre-Compra</a>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-red transition-colors">Inspección Pre-Compra</a>
               </li>
               
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Mantenimiento Preventivo</a>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-red transition-colors">Mantenimiento Preventivo</a>
               </li>
               
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-jocars-yellow transition-colors">Regeneración DPF</a>
+                <a href="#servicios" className="text-gray-400 hover:text-jocars-red transition-colors">Regeneración DPF</a>
               </li>
             </ul>
           </div>
@@ -90,7 +90,8 @@ const Footer = () => {
               <p>Región Metropolitana</p>
               
               <p>Teléfono: <a href="tel:+123456789" className="hover:text-jocars-yellow transition-colors">+56 9 3700 2417</a></p>
-              <p>Email: <a href="mailto:contacto@jocars.com" className="hover:text-jocars-yellow transition-colors">jocarscl@gmail.com</a></p>
+              <p>Teléfono: <a href="tel:+123456789" className="hover:text-jocars-red transition-colors">+56 9 3700 2417</a></p>
+              <p>Email: <a href="mailto:contacto@jocars.com" className="hover:text-jocars-red transition-colors">jocarscl@gmail.com</a></p>
             </address>
           </div>
         </div>
@@ -101,8 +102,8 @@ const Footer = () => {
           </p>
           
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-500 hover:text-jocars-yellow transition-colors text-sm">Política de Privacidad</a>
-            <a href="#" className="text-gray-500 hover:text-jocars-yellow transition-colors text-sm">Términos de Servicio</a>
+            <a href="#" className="text-gray-500 hover:text-jocars-red transition-colors text-sm">Política de Privacidad</a>
+            <a href="#" className="text-gray-500 hover:text-jocars-red transition-colors text-sm">Términos de Servicio</a>
           </div>
         </div>
       </div>

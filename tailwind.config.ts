@@ -54,8 +54,8 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				jocars: {
-					dark: '#11101a',
-					yellow: '#FFCC00',
+					dark: '#000000',
+					red: '#FF0000',
 					light: '#f8f8f8'
 				},
 				sidebar: {

@@ -34,17 +34,17 @@ const HeroSection = () => {
             
             <div className="flex items-center space-x-8 pt-8">
               <div>
-                <p className="text-4xl font-bold text-jocars-yellow">5+</p>
+                <p className="text-4xl font-bold text-jocars-red">5+</p>
                 <p className="text-sm text-gray-400">Años de experiencia</p>
               </div>
               
               <div>
-                <p className="text-4xl font-bold text-jocars-yellow">500+</p>
+                <p className="text-4xl font-bold text-jocars-red">500+</p>
                 <p className="text-sm text-gray-400">Vehículos diagnosticados</p>
               </div>
               
               <div>
-                <p className="text-4xl font-bold text-jocars-yellow">100%</p>
+                <p className="text-4xl font-bold text-jocars-red">100%</p>
                 <p className="text-sm text-gray-400">Clientes satisfechos</p>
               </div>
             </div>
@@ -52,9 +52,9 @@ const HeroSection = () => {
           
           <div className="hidden lg:flex justify-center items-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-jocars-yellow/20 blur-2xl rounded-full animate-pulse-slow"></div>
+              <div className="absolute inset-0 bg-jocars-red/20 blur-2xl rounded-full animate-pulse-slow"></div>
               <img 
-                src="/lovable-uploads/faedce22-0a8c-48e3-b8f8-d065792939e8.png" 
+                src="/jocars-logo-new.jpg" 
                 alt="JOCARS Logo" 
                 className="relative z-10 h-96 w-auto"
               />
@@ -66,7 +66,7 @@ const HeroSection = () => {
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
         <a 
           href="#servicios" 
-          className="flex flex-col items-center text-white hover:text-jocars-yellow transition-colors"
+          className="flex flex-col items-center text-white hover:text-jocars-red transition-colors"
           aria-label="Ver más"
         >
           <span className="text-sm font-medium mb-2">Ver Más</span>

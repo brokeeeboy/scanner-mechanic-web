@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="/" className="flex items-center">
           <img 
-            src="/lovable-uploads/faedce22-0a8c-48e3-b8f8-d065792939e8.png" 
+            src="/jocars-logo-new.jpg" 
             alt="JOCARS" 
             className="h-12 md:h-14"
           />
@@ -28,10 +28,10 @@ const Navbar = () => {
         
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#inicio" className="text-white hover:text-jocars-yellow transition-colors">Inicio</a>
-          <a href="#servicios" className="text-white hover:text-jocars-yellow transition-colors">Servicios</a>
-          <a href="#nosotros" className="text-white hover:text-jocars-yellow transition-colors">Nosotros</a>
-          <a href="#contacto" className="text-white hover:text-jocars-yellow transition-colors">Contacto</a>
+          <a href="#inicio" className="text-white hover:text-jocars-red transition-colors">Inicio</a>
+          <a href="#servicios" className="text-white hover:text-jocars-red transition-colors">Servicios</a>
+          <a href="#nosotros" className="text-white hover:text-jocars-red transition-colors">Nosotros</a>
+          <a href="#contacto" className="text-white hover:text-jocars-red transition-colors">Contacto</a>
           <a href="#contacto" className="btn-primary">
             Agendar Cita
           </a>
@@ -52,10 +52,10 @@ const Navbar = () => {
         <div className="md:hidden bg-jocars-dark/95 backdrop-blur-md">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
-              <a href="#inicio" className="text-white hover:text-jocars-yellow transition-colors py-2 border-b border-jocars-yellow/20" onClick={() => setIsMenuOpen(false)}>Inicio</a>
-              <a href="#servicios" className="text-white hover:text-jocars-yellow transition-colors py-2 border-b border-jocars-yellow/20" onClick={() => setIsMenuOpen(false)}>Servicios</a>
-              <a href="#nosotros" className="text-white hover:text-jocars-yellow transition-colors py-2 border-b border-jocars-yellow/20" onClick={() => setIsMenuOpen(false)}>Nosotros</a>
-              <a href="#contacto" className="text-white hover:text-jocars-yellow transition-colors py-2 border-b border-jocars-yellow/20" onClick={() => setIsMenuOpen(false)}>Contacto</a>
+              <a href="#inicio" className="text-white hover:text-jocars-red transition-colors py-2 border-b border-jocars-red/20" onClick={() => setIsMenuOpen(false)}>Inicio</a>
+              <a href="#servicios" className="text-white hover:text-jocars-red transition-colors py-2 border-b border-jocars-red/20" onClick={() => setIsMenuOpen(false)}>Servicios</a>
+              <a href="#nosotros" className="text-white hover:text-jocars-red transition-colors py-2 border-b border-jocars-red/20" onClick={() => setIsMenuOpen(false)}>Nosotros</a>
+              <a href="#contacto" className="text-white hover:text-jocars-red transition-colors py-2 border-b border-jocars-red/20" onClick={() => setIsMenuOpen(false)}>Contacto</a>
               <a href="#contacto" className="btn-primary" onClick={() => setIsMenuOpen(false)}>
                 Agendar Cita
               </a>

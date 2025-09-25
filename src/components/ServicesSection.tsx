@@ -58,7 +58,7 @@ const ServicesSection = () => {
           <div className="relative overflow-hidden pb-2">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
               NUESTROS SERVICIOS
-              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-jocars-yellow/0 via-jocars-yellow to-jocars-yellow/0 transform translate-y-1 animate-pulse"></div>
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-jocars-red/0 via-jocars-red to-jocars-red/0 transform translate-y-1 animate-pulse"></div>
             </h2>
           </div>
           <p className="text-gray-300 max-w-3xl mx-auto">
@@ -74,14 +74,14 @@ const ServicesSection = () => {
             >
               <div className="service-icon group animate-float">
                 {service.icon}
-                <div className="absolute -inset-2 bg-jocars-yellow/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 blur-md"></div>
+                <div className="absolute -inset-2 bg-jocars-red/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 blur-md"></div>
               </div>
               
-              <h3 className="text-xl font-bold mb-3 text-jocars-yellow relative z-10">{service.title}</h3>
+              <h3 className="text-xl font-bold mb-3 text-jocars-red relative z-10">{service.title}</h3>
               
               <p className="text-gray-300 mb-4 relative z-10 flex-grow">{service.description}</p>
               
-              <a href="#contacto" className="inline-flex items-center text-jocars-yellow hover:text-yellow-400 transition-colors relative z-10 group">
+              <a href="#contacto" className="inline-flex items-center text-jocars-red hover:text-red-400 transition-colors relative z-10 group">
                 <span className="group-hover:translate-x-1 transition-transform duration-300">Saber más</span>
                 <svg 
                   className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" 

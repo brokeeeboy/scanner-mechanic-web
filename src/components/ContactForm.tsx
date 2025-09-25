@@ -90,7 +90,7 @@ ${formData.name}`;
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
             <label htmlFor="name" className="block text-gray-300 mb-2">
-              Nombre <span className="text-jocars-yellow">*</span>
+              Nombre <span className="text-jocars-red">*</span>
             </label>
             <input
               type="text"
@@ -99,14 +99,14 @@ ${formData.name}`;
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full bg-jocars-dark border border-jocars-yellow/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-yellow transition-colors"
+              className="w-full bg-jocars-dark border border-jocars-red/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-red transition-colors"
               placeholder="Tu nombre completo"
             />
           </div>
 
           <div>
             <label htmlFor="email" className="block text-gray-300 mb-2">
-              Correo Electrónico <span className="text-jocars-yellow">*</span>
+              Correo Electrónico <span className="text-jocars-red">*</span>
             </label>
             <input
               type="email"
@@ -115,7 +115,7 @@ ${formData.name}`;
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full bg-jocars-dark border border-jocars-yellow/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-yellow transition-colors"
+              className="w-full bg-jocars-dark border border-jocars-red/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-red transition-colors"
               placeholder="tu@email.com"
             />
           </div>
@@ -130,7 +130,7 @@ ${formData.name}`;
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full bg-jocars-dark border border-jocars-yellow/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-yellow transition-colors"
+              className="w-full bg-jocars-dark border border-jocars-red/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-red transition-colors"
               placeholder="+56 9 1234 5678"
             />
           </div>
@@ -143,7 +143,7 @@ ${formData.name}`;
               name="car"
               value={formData.car}
               onChange={handleChange}
-              className="w-full bg-jocars-dark border border-jocars-yellow/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-yellow transition-colors"
+              className="w-full bg-jocars-dark border border-jocars-red/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-red transition-colors"
               placeholder="Ej: Toyota Corolla 2020"
             />
           </div>
@@ -151,7 +151,7 @@ ${formData.name}`;
 
         <div className="mb-6">
           <label htmlFor="message" className="block text-gray-300 mb-2">
-            Mensaje <span className="text-jocars-yellow">*</span>
+            Mensaje <span className="text-jocars-red">*</span>
           </label>
           <textarea
             id="message"
@@ -160,7 +160,7 @@ ${formData.name}`;
             onChange={handleChange}
             required
             rows={4}
-            className="w-full bg-jocars-dark border border-jocars-yellow/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-yellow transition-colors resize-none"
+            className="w-full bg-jocars-dark border border-jocars-red/30 rounded-lg p-3 text-white focus:outline-none focus:border-jocars-red transition-colors resize-none"
             placeholder="Describe tu consulta o el problema que tienes con tu vehículo..."
           ></textarea>
         </div>
@@ -173,7 +173,7 @@ ${formData.name}`;
         </button>
 
         <p className="text-gray-400 text-sm mt-4 text-center">
-          Los campos marcados con <span className="text-jocars-yellow">*</span> son obligatorios
+          Los campos marcados con <span className="text-jocars-red">*</span> son obligatorios
         </p>
         
         <p className="text-gray-500 text-xs mt-2 text-center">
