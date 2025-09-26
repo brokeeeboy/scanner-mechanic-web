@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <a href="/" className="inline-block mb-6">
               <img 
-                src="/logo jocars 2.jpg" 
+                src="/logo jocars normal.jpg" 
                 alt="JOCARS" 
                 className="h-10"
               />

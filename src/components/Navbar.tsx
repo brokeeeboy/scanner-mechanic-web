@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="/" className="flex items-center">
           <img 
-            src="/logo jocars 2.jpg" 
+            src="/logo jocars normal.jpg" 
             alt="JOCARS" 
             className="h-12 md:h-14"
           />
