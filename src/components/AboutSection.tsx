@@ -61,7 +61,7 @@ const AboutSection = () => {
               <div className="p-8">
                 <div className="flex justify-center mb-6">
                   <img 
-                    src="/jocars-logo-new.jpg" 
+                    src="/logo jocars 2.jpg" 
                     alt="JOCARS" 
                     className="h-16"
                   />
