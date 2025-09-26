@@ -1,5 +1,5 @@
 
-import { BarChart2, Car } from "lucide-react";
+import { ChartBar as BarChart2, Car } from "lucide-react";
 
 const HeroSection = () => {
   return (
